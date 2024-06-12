@@ -1,6 +1,22 @@
+'use client'
 import Image from "next/image";
+import React, {useState, useEffect} from "react";
 
 export default function Home() {
+  const [first, setfirst] = useState(undefined)
+
+  const getData = async() =>{
+    const response = await fetch("https://immense-smartphone-deafening.functions.on-fleek.app?params=%22hello%20fleek%22")
+    console.log(response)    
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+  
+
+
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
